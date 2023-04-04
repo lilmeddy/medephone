@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,10 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phone</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../icofont/icofont.min.css">
     </head>
     <body>
 <main>
-    <h1>hiii</h1>
+     <div id="firstScreen">
+        <header>
+            <nav id="time" style="margin-left: 5px;">
+            </nav>
+            <nav class="other">
+                <span><i class="icofont-music" style="margin-right: 5px;"></i></span>
+                <!-- <span style="color: green;"><i class="icofont-whatsapp"><sup id="whatChange" style="border-radius: 50%; background-color:red;color:white;width: fit-content;height: fit-content;"></sup></i></span> -->
+                <span><i class="icofont-bluetooth" style="margin-right: 5px;"></i></span>
+             <span><i class="icofont-wifi" style="margin-right: 5px;"></i></span>
+             <span><i class="icofont-battery-full" style="margin-right: 5px;"></i></span> 
+            </nav>
+        </header>
+
+     </div>
 </main>
     </body>
     </html>
+    <script>
+        //  let index = 1
+     setInterval(()=>{
+  let date = new Date()
+  date.getHours() <= 11 ?  document.getElementById("time").innerHTML = date.getHours() + ":" + date.getMinutes() +" AM" : document.getElementById("time").innerHTML = date.getHours() + ":" + date.getMinutes() +" PM"
+},1000)
+// setInterval(()=>{
+//     document.getElementById("whatChange").innerHTML = index;
+//   index++
+//   document.getElementById("whatChange").style.paddingLeft = "5px";
+//   document.getElementById("whatChange").style.paddingRight = "5px";
+//   document.getElementById("whatChange").style.paddingTop = "0.5px";
+//   document.getElementById("whatChange").style.paddingBottom = "0.5px";
+// },2000)
+    </script>
