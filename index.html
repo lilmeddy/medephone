@@ -5,40 +5,149 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phone</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../icofont/icofont.min.css">
-    </head>
-    <body>
-<main>
-     <div id="firstScreen">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../icofont/icofont.min.css" />
+  </head>
+  <body>
+    <main>
+      <div id="firstScreen">
         <header>
-            <nav id="time" style="margin-left: 5px;">
-            </nav>
-            <nav class="other">
-                <span><i class="icofont-music" style="margin-right: 5px;"></i></span>
-                <!-- <span style="color: green;"><i class="icofont-whatsapp"><sup id="whatChange" style="border-radius: 50%; background-color:red;color:white;width: fit-content;height: fit-content;"></sup></i></span> -->
-                <span><i class="icofont-bluetooth" style="margin-right: 5px;"></i></span>
-             <span><i class="icofont-wifi" style="margin-right: 5px;"></i></span>
-             <span><i class="icofont-battery-full" style="margin-right: 5px;"></i></span> 
-            </nav>
+          <nav id="time" style="margin-left: 5px"></nav>
+          <nav class="other">
+            <span><i class="icofont-music" style="margin-right: 5px"></i></span>
+            <!-- <span style="color: green;"><i class="icofont-whatsapp"><sup id="whatChange" style="border-radius: 50%; background-color:red;color:white;width: fit-content;height: fit-content;"></sup></i></span> -->
+            <span
+              ><i class="icofont-bluetooth" style="margin-right: 5px"></i
+            ></span>
+            <span><i class="icofont-wifi" style="margin-right: 5px"></i></span>
+            <span
+              ><i class="icofont-battery-full" style="margin-right: 5px"></i
+            ></span>
+          </nav>
         </header>
+          <div id="firstSigning"></div>
+          <div class="upCons" id="cons">
+            <div class="conflex">
+           <div class="conDiv"><button class="cons"><i class="icofont-wifi"></i></button><p style="margin-top: 5px; font-size: 10px;">Wi-fi</p></div>
+           <div class="conDiv"><button class="cons"><i class="icofont-wifi"></i></button><p style="margin-top: 5px; font-size: 10px;">Wi-fi</p></div>
+           <div class="conDiv"><button class="cons"><i class="icofont-wifi"></i></button><p style="margin-top: 5px; font-size: 10px;">Wi-fi</p></div>
+           <div class="conDiv"><button class="cons"><i class="icofont-wifi"></i></button><p style="margin-top: 5px; font-size: 10px;">Wi-fi</p></div>
+           <div class="conDiv"><button class="cons"><i class="icofont-wifi"></i></button><p style="margin-top: 5px; font-size: 10px;">Wi-fi</p></div>
+           <div class="conDiv"><button class="cons"><i class="icofont-wifi"></i></button><p style="margin-top: 5px; font-size: 10px;">Wi-fi</p></div>
+           <div class="conDiv"><button class="cons"><i class="icofont-wifi"></i></button><p style="margin-top: 5px; font-size: 10px;">Wi-fi</p></div>
+           <div class="conDiv"><button class="cons"><i class="icofont-wifi"></i></button><p style="margin-top: 5px; font-size: 10px;">Wi-fi</p></div>
+           <div class="conDiv"><button class="cons"><i class="icofont-wifi"></i></button><p style="margin-top: 5px; font-size: 10px;">Wi-fi</p></div>
+           <div class="conDiv"><button class="cons"><i class="icofont-wifi"></i></button><p style="margin-top: 5px; font-size: 10px;">Wi-fi</p></div>
+           <div class="conDiv"><button class="cons"><i class="icofont-wifi"></i></button><p style="margin-top: 5px; font-size: 10px;">Wi-fi</p></div>
+           <div class="conDiv"><button class="cons"><i class="icofont-wifi"></i></button><p style="margin-top: 5px; font-size: 10px;">Wi-fi</p></div>
+          </div>
+          <div class="upEnd">
+            <div class="upTooth">
+               <i class="icofont-bluetooth"></i>
+            </div>
+         <div class="brightness">
+            <div class="brightBlue"></div>
+            <div class="lightBlue"></div>
+         </div>
+         <div class="upTooth">
+            <i class="icofont-music"></i>
+         </div>
+         </div>
+          </div>
+         <footer class="firstFoot">
+            <div class="footCall">
+                <button onclick="myHome()"><i class="icofont-home"></i></button>
+            </div>
+            <div class="footMenu">
+                <button onclick="myUp()" id="myUpp"><i class="icofont-caret-up"></i></button>
+                <button onclick="myDown()" id="myDownn"><i class="icofont-caret-down"></i></button>
+            </div>
+            <div class="footSnap">
+              <button> <i class="icofont-camera"></i></button> 
+            </div>
+         </footer>
+      </div>
+      <div id="secondScreen">
+        <header>
+            <nav id="tim" style="margin-left: 5px"></nav>
+            <nav class="other">
+              <span><i class="icofont-music" style="margin-right: 5px"></i></span>
+              <!-- <span style="color: green;"><i class="icofont-whatsapp"><sup id="whatChange" style="border-radius: 50%; background-color:red;color:white;width: fit-content;height: fit-content;"></sup></i></span> -->
+              <span
+                ><i class="icofont-bluetooth" style="margin-right: 5px"></i
+              ></span>
+              <span><i class="icofont-wifi" style="margin-right: 5px"></i></span>
+              <span
+                ><i class="icofont-battery-full" style="margin-right: 5px"></i
+              ></span>
+            </nav>
+          </header>
+          div.
+      </div>
+    </main>
+  </body>
+</html>
+<script>
+  //  let index = 1
+  document.getElementById("secondScreen").style.display = "none"
+  function myHome(){
+    document.getElementById("firstScreen").style.display = "none"
+    document.getElementById("secondScreen").style.display = "block"
+  }
+  setInterval(() => {
+    let date = new Date();
+    date.getHours() <= 11
+      ? (document.getElementById("time").innerHTML =
+          date.getHours() + ":" + date.getMinutes() + " AM")
+      : (document.getElementById("time").innerHTML =
+          date.getHours() + ":" + date.getMinutes() + " PM");
+  }, 1000);
+  setInterval(() => {
+    let date = new Date();
+    date.getHours() <= 11
+      ? (document.getElementById("tim").innerHTML =
+          date.getHours() + ":" + date.getMinutes() + " AM")
+      : (document.getElementById("tim").innerHTML =
+          date.getHours() + ":" + date.getMinutes() + " PM");
+  }, 1000);
+  setTimeout(() => {
+    if (  document.getElementById("firstSigning").style.top= '-80px'){
+          document.getElementById("firstSigning").style.top=   '45%'
+    }
+    let mypin = document.getElementById('mypin')
 
-     </div>
-</main>
-    </body>
-    </html>
-    <script>
-        //  let index = 1
-     setInterval(()=>{
-  let date = new Date()
-  date.getHours() <= 11 ?  document.getElementById("time").innerHTML = date.getHours() + ":" + date.getMinutes() +" AM" : document.getElementById("time").innerHTML = date.getHours() + ":" + date.getMinutes() +" PM"
-},1000)
-// setInterval(()=>{
-//     document.getElementById("whatChange").innerHTML = index;
-//   index++
-//   document.getElementById("whatChange").style.paddingLeft = "5px";
-//   document.getElementById("whatChange").style.paddingRight = "5px";
-//   document.getElementById("whatChange").style.paddingTop = "0.5px";
-//   document.getElementById("whatChange").style.paddingBottom = "0.5px";
-// },2000)
-    </script>
+    document.getElementById("firstSigning").innerHTML =
+      "<p style= 'padding:2px;'>" +
+      "Priscilla's Android needs some system updates" +
+    //   "<button onclick='myShowDrop()' style='background-color: red; border:none; outline:none;padding:5px; margin-left:10px;'>"+
+    //     "x" +
+    //     "</button>"
+      "</p>" 
+    //   function myShowDrop() {
+    //     if (document.getElementById("firstSigning").style.top= '53%'){
+    //       document.getElementById("firstSigning").style.top=   '-83px'
+    // }
+    //   }
+      document.getElementById("firstSigning").style.padding ="10px"
+  }, 3000);
+  document.getElementById("myDownn").style.display = "none"
+  document.getElementById("cons").style.visibility = "hidden"
+  function myUp(){
+    document.getElementById("cons").style.visibility = "visible"
+    document.getElementById("myUpp").style.display = "none"
+    document.getElementById("myDownn").style.display = "block"
+    if (  document.getElementById("firstSigning").style.top= '45%'){
+          document.getElementById("firstSigning").style.top=   '54%'
+    }
+    
+  }
+  function myDown(){
+    document.getElementById("cons").style.visibility = "hidden"
+    document.getElementById("myUpp").style.display = "block"
+    document.getElementById("myDownn").style.display = "none"
+    if (  document.getElementById("firstSigning").style.top= '54%'){
+          document.getElementById("firstSigning").style.top=   '45%'
+    }
+    
+  }
+</script>
