@@ -103,9 +103,14 @@
             </button>
           </div>
           <div class="footSnap">
-            <button><i class="icofont-camera"></i></button>
+            <button onclick="startCam()"><i class="icofont-camera"></i></button>
           </div>
         </footer>
+      </div>
+      <div id="camScreen">
+        <video id="video" autoplay src=""></video>
+        <canvas id="canvas"></canvas>
+        <button onclick="takePic()"><i class="icofont-ui-add"></i></button>
       </div>
       <div id="secondScreen">
         <header>
