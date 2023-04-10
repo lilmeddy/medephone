@@ -108,9 +108,27 @@
         </footer>
       </div>
       <div id="camScreen">
-        <video id="video" autoplay src=""></video>
-        <canvas id="canvas"></canvas>
-        <button onclick="takePic()"><i class="icofont-ui-add"></i></button>
+        <header style="color: black;">
+          <nav id="tie" style="margin-left: 5px"></nav>
+          <nav class="other">
+            <span><i class="icofont-music" style="margin-right: 5px"></i></span>
+            <!-- <span style="color: green;"><i class="icofont-whatsapp"><sup id="whatChange" style="border-radius: 50%; background-color:red;color:white;width: fit-content;height: fit-content;"></sup></i></span> -->
+            <span
+              ><i class="icofont-bluetooth" style="margin-right: 5px"></i
+            ></span>
+            <span><i class="icofont-wifi" style="margin-right: 5px"></i></span>
+            <span
+              ><i class="icofont-battery-full" style="margin-right: 5px"></i
+            ></span>
+          </nav>
+        </header>
+       <div class="vid"><video id="video" autoplay src="" width="100%" height="100%"></video></div>
+       <div id="canv">
+        <canvas id="canvas" width="60px" height="59.5px" style="border-radius: 60px;"></canvas>
+       <div class="pic"><button id="take-pic" onclick="takePic()"></button></div>
+       <div style="width: 80px;"></div>
+      </div>
+      <div class="back" style="text-align: center;"><button onclick="takeBack()"></button></div>
       </div>
       <div id="secondScreen">
         <header>
@@ -158,10 +176,11 @@
           </div>
         </div>
         </div>
+        <div class="back" style="text-align: center;"><button onclick="takeBack()"></button></div>
       </div>
       <div id="thirdScreen">
         <header>
-            <nav id="tie" style="margin-left: 5px; color:black;"></nav>
+            <nav id="timee" style="margin-left: 5px; color:black;"></nav>
             <nav class="other">
               <span><i class="icofont-music" style="margin-right: 5px; color:black;"></i></span>
               <!-- <span style="color: green;"><i class="icofont-whatsapp"><sup id="whatChange" style="border-radius: 50%; background-color:red;color:white;width: fit-content;height: fit-content;"></sup></i></span> -->
@@ -170,13 +189,18 @@
               ></span>
               <span><i class="icofont-wifi" style="margin-right: 5px; color:black;"></i></span>
               <span
-                ><i class="icofont-battery-full" style="margin-right: 5px; color:black;"></i
+                ><i class="icofont-batter3y-full" style="margin-right: 5px; color:black;"></i
               ></span>
             </nav>
           </header>
+          <div class="first-icons"></div>
           <div class="icons">
-
-          </div>
+           <div class="font"><button onclick="myWhatsapp()"><i class="icofont-whatsapp"></i></button></div>
+          <div class="font"><button onclick="myCalls()"><i class="icofont-phone"></i></button></div>
+          <div class="font"><button onclick="myCal()"><i class="icofont-calculator"></i></button></div>
+      <div class="font"><button onclick="startCam()"><i class="icofont-camera"></i></button></div>
+      </div>
+      <div class="back" style="margin-top:-7px; text-align:center;"><button onclick="goBack()"></button></div>
       </div>
     </main>
   </body>
@@ -205,6 +229,14 @@ let random_number =Math.floor(Math.random() *10000)
       ? (document.getElementById("tim").innerHTML =
           date.getHours() + ":" + date.getMinutes() + " AM")
       : (document.getElementById("tim").innerHTML =
+          date.getHours() + ":" + date.getMinutes() + " PM");
+  }, 1000);
+  setInterval(() => {
+    let date = new Date();
+    date.getHours() <= 11
+      ? (document.getElementById("timee").innerHTML =
+          date.getHours() + ":" + date.getMinutes() + " AM")
+      : (document.getElementById("timee").innerHTML =
           date.getHours() + ":" + date.getMinutes() + " PM");
   }, 1000);
   setInterval(() => {
@@ -253,6 +285,28 @@ let random_number =Math.floor(Math.random() *10000)
       document.getElementById("firstSigning").style.top = "45%";
     }
   }
+  function takeBack(){
+  camScreen.style.display ="none"
+  document.getElementById("firstScreen").style.display = "block";
+  document.getElementById("secondScreen").style.display = "none";
+}
+ let camScreen =  document.getElementById("camScreen")
+ let video = document.getElementById("video")
+ let canvas = document.getElementById("canvas")
+ camScreen.style.display ="none"
+ async function startCam(){
+    document.getElementById("firstScreen").style.display = "none"
+    camScreen.style.display = "block"
+    let thepix = await navigator.mediaDevices.getUserMedia({audio:false, video:true})
+    video.srcObject = thepix;
+ }
+ function takePic(){
+  // let vid = []
+ canvas.getContext("2d").drawImage(video, 0,0, canvas.width, canvas.height);
+  let img_link = canvas.toDataURL('image/jpg'); 
+
+  console.log(img_link);
+ }
   document.getElementById("myHide").style.display = "none";
   function showInp() {
     let myInp = document.getElementById("myInp");
