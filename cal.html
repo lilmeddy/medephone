@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../icofont/icofont.min.css" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        /* top: 0; */
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f2f2f2;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      }
+      main {
+        width: 340px;
+        height: 600px;
+        font-family: serif;
+        margin: 70px auto;
+        /* border: 1px solid #fff; */
+        border: 6px solid #444;
+        border-radius: 5px;
+        background-color: lightgrey;
+        padding: 3px;
+        /* border: 3px solid lightgray; */
+        /* box-shadow: 2px 2px 3px 3px lightgray; */
+        /* border-radius: 15px; */
+        display: flex;
+        /* align-items: center; */
+        justify-content: space-evenly;
+        /* flex-direction: column; */
+      }
+
+      header {
+    width: 94%;
+    height: 8%;
+    /* border: 1px solid blue; */
+    /* background-color: #333; */
+    color: #111;
+    font-size: 15px;
+    display: flex;
+    /* margin-bottom: 10px; */
+    justify-content: space-between;
+    align-items: center;
+}
+.every{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+      .cal {
+        width: 96%;
+        height: 455px;
+        /* margin-top: 10px; */
+        border: 1px solid #fff;
+        border-radius: 8px;
+        margin: auto;
+        position: relative;
+        /* margin-bottom: -20px; */
+        background-color: #fff;
+        box-shadow: 2px 2px 3px 3px white;
+      }
+      #myShow {
+        width: 90%;
+        height: 40px;
+        /* margin: auto; */
+        display: block;
+        border: 1px solid #fff;
+        border-radius: 8px;
+        outline: none;
+        text-align: right;
+        color: black;
+        padding: 5px;
+        font-size: 25px;
+      }
+      ::placeholder {
+        color: black;
+        font-size: 25px;
+      }
+      .all {
+        width: 90%;
+        margin: auto;
+        /* margin-top: 15px; */
+        /* border: 1px solid blue; */
+      }
+      ul {
+        margin: auto;
+      }
+      li {
+        display: inline-block;
+        margin-left: 23px;
+        cursor: pointer;
+        margin-bottom: 6px;
+        font-size: 10px;
+        font-weight: 600;
+        margin-top: 5px;
+      }
+      li:hover {
+        color: bisque;
+      }
+      .ac {
+        color: #333;
+        background-color: bisque;
+        box-shadow: 1px 1px 2px 2px bisque;
+        border: 4px solid bisque;
+      }
+      .first,
+      .second,
+      .third,
+      .last {
+        margin-left: 5px;
+      }
+      button {
+        width: 50px;
+        padding: 5px;
+        background-color: lightgrey;
+        color: #222;
+        border: 4px solid lightgrey;
+        font-size: 25px;
+        border-radius: 5px;
+        margin: 7px;
+        margin-bottom: 15px;
+        box-shadow: 1px 1px 2px 2px lightgray;
+        cursor: pointer;
+      }
+      button:focus-within {
+        transform: translate(0.2px, 0.2px);
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+      }
+      .back button {
+    width: 100px;
+    height: 5px;
+    background-color: rgba(155, 125, 179, 0.3);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+      /* .hehe{
+        width: 50px;
+        height: 5px;
+        border-radius: 50%;
+        border: 1px solid bisque;
+        margin: auto;
+       } */
+    </style>
+  </head>
+  <body>
+    <main>
+        <div class="every">
+        <header>
+            <nav id="time" style="margin-left: 10px"></nav>
+            <nav class="other">
+              <span><i class="icofont-music" style="margin-right: 5px"></i></span>
+              <!-- <span style="color: green;"><i class="icofont-whatsapp"><sup id="whatChange" style="border-radius: 50%; background-color:red;color:white;width: fit-content;height: fit-content;"></sup></i></span> -->
+              <span
+                ><i class="icofont-bluetooth" style="margin-right: 5px"></i
+              ></span>
+              <span><i class="icofont-wifi" style="margin-right: 5px"></i></span>
+              <span
+                ><i class="icofont-battery-full" style="margin-right: 10px"></i
+              ></span>
+            </nav>
+          </header>
+        <div class="cal">
+          <input type="text" placeholder="0" id="myShow" />
+          <div class="all">
+            <div class="ul">
+              <ul>
+                <li>MC</li>
+                <li>MR</li>
+                <li>M+</li>
+                <li>M-</li>
+                <li>MS</li>
+                <li>M <sup>+</sup></li>
+              </ul>
+            </div>
+
+            <div class="first">
+              <button onclick="Clear()" class="ac">AC</button>
+              <button onclick="del()" class="ac">CE</button>
+              <button onclick="display('/')" class="ac">÷</button>
+              <button onclick="display('%')" class="ac">%</button>
+            </div>
+            <div class="second">
+              <button onclick="display('7')" class="nums">7</button>
+              <button onclick="display('8')" class="nums">8</button>
+              <button onclick="display('9')" class="nums">9</button>
+              <button onclick="display('*')" class="ac">×</button>
+            </div>
+            <div class="second">
+              <button onclick="display('4')" class="nums">4</button>
+              <button onclick="display('5')" class="nums">5</button>
+              <button onclick="display('6')" class="nums">6</button>
+              <button onclick="display('+')" class="ac">+</button>
+            </div>
+            <div class="third">
+              <button onclick="display('1')" class="nums">1</button>
+              <button onclick="display('2')" class="nums">2</button>
+              <button onclick="display('3')" class="nums">3</button>
+              <button onclick="display('-')" class="ac">-</button>
+            </div>
+            <div class="last">
+              <button onclick="display('0')" style="width: 115px" class="ac">
+                0
+              </button>
+              <button onclick="display('.')"><sup>.</sup></button>
+              <button onclick="calculate()" class="ac">=</button>
+            </div>
+          </div>
+        </div>
+        <div class="back" style="margin-top: -7px; text-align: center">
+            <a href="index.html"><button></button></a>
+          </div>
+      </div>
+      <!-- <div class="hehe"></div> -->
+    </main>
+  </body>
+</html>
+<script>
+     setInterval(() => {
+    let date = new Date();
+    date.getHours() <= 11
+      ? (document.getElementById("time").innerHTML =
+          date.getHours() + ":" + date.getMinutes() + " AM")
+      : (document.getElementById("time").innerHTML =
+          date.getHours() + ":" + date.getMinutes() + " PM");
+  }, 1000);
+  let myShow = document.getElementById("myShow");
+  function display(num) {
+    myShow.value += num;
+  }
+  function calculate() {
+    try {
+      myShow.value = eval(myShow.value);
+    } catch (err) {
+      myShow.value = "Math Error";
+      console.log("error");
+    }
+  }
+  function Clear() {
+    myShow.value = "";
+  }
+  
+</script>

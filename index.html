@@ -108,7 +108,7 @@
         </footer>
       </div>
       <div id="camScreen">
-        <header style="color: black;">
+        <header style="color: black">
           <nav id="tie" style="margin-left: 5px"></nav>
           <nav class="other">
             <span><i class="icofont-music" style="margin-right: 5px"></i></span>
@@ -122,14 +122,27 @@
             ></span>
           </nav>
         </header>
-       <div class="vid"><video id="video" autoplay src="" width="100%" height="100%"></video></div>
-       <div id="canv">
-        <canvas id="canvas" width="60px" height="59.5px" style="border-radius: 60px;"></canvas>
-       <div class="pic"><button id="take-pic" onclick="takePic()"></button></div>
-       <div style="width: 80px;"></div>
+        <div class="vid">
+          <video id="video" autoplay src="" width="100%" height="100%"></video>
+        </div>
+        <div id="canv">
+          <!-- <img src=""  alt=""> -->
+          <canvas
+            id="canvas"
+            width="60px"
+            height="59.5px"
+            style="border-radius: 60px"
+          ></canvas>
+          <div class="pic">
+            <button id="take-pic" onclick="takePic()"></button>
+          </div>
+         <div style="width: 80px;"></div>
+        </div>
+        <div class="back" style="text-align: center">
+          <button onclick="takeBack()"></button>
+        </div>
       </div>
-      <div class="back" style="text-align: center;"><button onclick="takeBack()"></button></div>
-      </div>
+      <div id="snapss"></div>
       <div id="secondScreen">
         <header>
           <nav id="tim" style="margin-left: 5px"></nav>
@@ -146,75 +159,185 @@
           </nav>
         </header>
         <div class="passWord">
-            <div class="passAll">
-          <div class="inpp">
-            <input type="password" name="" id="myInp" />
-            <button onclick="showInp()" id="myShow">Show</button>
-            <button onclick="hideInp()" id="myHide" style="color: red;">Hide</button>
-          </div>
-          <div class="passButton">
-            <div class="butt-one">
-              <button onclick="display(1)">1</button>
-              <button onclick="display(2)">2</button>
-              <button onclick="display(3)">3</button>
+          <div class="passAll">
+            <div class="inpp">
+              <input type="password" name="" id="myInp" />
+              <button onclick="showInp()" id="myShow">Show</button>
+              <button onclick="hideInp()" id="myHide" style="color: red">
+                Hide
+              </button>
             </div>
-            <div class="butt-one">
-              <button onclick="display(4)">4</button>
-              <button onclick="display(5)">5</button>
-              <button onclick="display(6)">6</button>
-            </div>
-            <div class="butt-one">
+            <div class="passButton">
+              <div class="butt-one">
+                <button onclick="display(1)">1</button>
+                <button onclick="display(2)">2</button>
+                <button onclick="display(3)">3</button>
+              </div>
+              <div class="butt-one">
+                <button onclick="display(4)">4</button>
+                <button onclick="display(5)">5</button>
+                <button onclick="display(6)">6</button>
+              </div>
+              <div class="butt-one">
                 <button onclick="display(7)">7</button>
                 <button onclick="display(8)">8</button>
                 <button onclick="display(9)">9</button>
               </div>
-            <div class="butt-one">
-              <button onclick="clr()">X</button>
-              <button onclick="display(0)">0</button>
-              <button onclick="next()">✔</button>
+              <div class="butt-one">
+                <button onclick="clr()">X</button>
+                <button onclick="display(0)">0</button>
+                <button onclick="next()">✔</button>
+              </div>
             </div>
           </div>
         </div>
+        <div class="back" style="text-align: center">
+          <button onclick="takeBack()"></button>
         </div>
-        <div class="back" style="text-align: center;"><button onclick="takeBack()"></button></div>
       </div>
       <div id="thirdScreen">
         <header>
-            <nav id="timee" style="margin-left: 5px; color:black;"></nav>
-            <nav class="other">
-              <span><i class="icofont-music" style="margin-right: 5px; color:black;"></i></span>
-              <!-- <span style="color: green;"><i class="icofont-whatsapp"><sup id="whatChange" style="border-radius: 50%; background-color:red;color:white;width: fit-content;height: fit-content;"></sup></i></span> -->
-              <span
-                ><i class="icofont-bluetooth" style="margin-right: 5px; color:black;"></i
-              ></span>
-              <span><i class="icofont-wifi" style="margin-right: 5px; color:black;"></i></span>
-              <span
-                ><i class="icofont-batter3y-full" style="margin-right: 5px; color:black;"></i
-              ></span>
-            </nav>
-          </header>
-          <div class="first-icons"></div>
-          <div class="icons">
-           <div class="font"><button onclick="myWhatsapp()"><i class="icofont-whatsapp"></i></button></div>
-          <div class="font"><button onclick="myCalls()"><i class="icofont-phone"></i></button></div>
-          <div class="font"><button onclick="myCal()"><i class="icofont-calculator"></i></button></div>
-      <div class="font"><button onclick="startCam()"><i class="icofont-camera"></i></button></div>
+          <nav id="timee" style="margin-left: 5px; color: black"></nav>
+          <nav class="other">
+            <span
+              ><i
+                class="icofont-music"
+                style="margin-right: 5px; color: black"
+              ></i
+            ></span>
+            <!-- <span style="color: green;"><i class="icofont-whatsapp"><sup id="whatChange" style="border-radius: 50%; background-color:red;color:white;width: fit-content;height: fit-content;"></sup></i></span> -->
+            <span
+              ><i
+                class="icofont-bluetooth"
+                style="margin-right: 5px; color: black"
+              ></i
+            ></span>
+            <span
+              ><i
+                class="icofont-wifi"
+                style="margin-right: 5px; color: black"
+              ></i
+            ></span>
+            <span
+              ><i
+                class="icofont-batter3y-full"
+                style="margin-right: 5px; color: black"
+              ></i
+            ></span>
+          </nav>
+        </header>
+        <div class="first-icons"></div>
+        <div class="icons">
+          <div class="font">
+            <button onclick="myWhatsapp()" style="color: green">
+              <a href="../Level1-Sqi/whatsapp/index.html"><i class="icofont-whatsapp"></i></a>
+            </button>
+          </div>
+          <div class="font">
+            <button onclick="myCalls()" style="color: rgb(8, 128, 24)" >
+            <i class="icofont-phone"></i>
+            </button>
+          </div>
+          <div class="font">
+            <button onclick="myCal()" style="color: rgb(24, 6, 90)">
+              <a href="cal.html"><i class="icofont-calculator"></i></a>
+            </button>
+          </div>
+          <div class="font">
+            <button onclick="startCam()" style="color: rgb(240, 13, 51)">
+              <i class="icofont-camera"></i>
+            </button>
+          </div>
+        </div>
+        <div class="back" style="margin-top: -7px; text-align: center">
+          <button onclick="goBack()"></button>
+        </div>
       </div>
-      <div class="back" style="margin-top:-7px; text-align:center;"><button onclick="goBack()"></button></div>
+      <div id="phoneScreen">
+        <header style="color: white">
+          <nav id="timeee" style="margin-left: 5px"></nav>
+          <nav class="other">
+            <span><i class="icofont-music" style="margin-right: 5px"></i></span>
+            <!-- <span style="color: green;"><i class="icofont-whatsapp"><sup id="whatChange" style="border-radius: 50%; background-color:red;color:white;width: fit-content;height: fit-content;"></sup></i></span> -->
+            <span
+              ><i class="icofont-bluetooth" style="margin-right: 5px"></i
+            ></span>
+            <span><i class="icofont-wifi" style="margin-right: 5px"></i></span>
+            <span
+              ><i class="icofont-batter3y-full" style="margin-right: 5px"></i
+            ></span>
+          </nav>
+        </header>
+        <div class="phone-icons" style="color: white">
+          <p>Phone</p>
+          <div>
+            <span>
+              <i class="icofont-search-2" style="margin-right: 5px"></i>
+            </span>
+            <span>
+              <i class="icofont-gear" style="margin-right: 5px"></i>
+            </span>
+          </div>
+        </div>
+        <section class="calldiv">
+          <div>
+            <div class="calldiv-inp">
+              <input type="text" id="myInput" />
+            </div>
+            <div class="calldiv-button">
+              <div class="butt-one">
+                <button onclick="displayNum(1)">1</button>
+                <button onclick="displayNum(2)">2</button>
+                <button onclick="displayNum(3)">3</button>
+              </div>
+              <div class="butt-one">
+                <button onclick="displayNum(4)">4</button>
+                <button onclick="displayNum(5)">5</button>
+                <button onclick="displayNum(6)">6</button>
+              </div>
+              <div class="butt-one">
+                <button onclick="displayNum(7)">7</button>
+                <button onclick="displayNum(8)">8</button>
+                <button onclick="displayNum(9)">9</button>
+              </div>
+              <div class="butt-one">
+                <button onclick="displayNum('*')">*</button>
+                <button onclick="displayNum(0)">0</button>
+                <button onclick="displayNum('#')">#</button>
+              </div>
+              <div class="butt-one">
+                <button onclick="clrNum()">X</button>
+                <button onclick="makeCall()">
+                  <i class="icofont-phone"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </main>
-  </body>
+     
 </html>
 <script>
+  
+  let myImages = [];
+  const mySnaps = () => {};
+  const myCalls = () => {
+    document.getElementById("thirdScreen").style.display = "none";
+    document.getElementById("phoneScreen").style.display = "block";
+  };
+  const makeCall = () => {
+    
+  };
   //  let index = 1
-//   let random = mathRandom()
-let random_number =Math.floor(Math.random() *10000) 
+  //   let random = mathRandom()
+  let random_number = Math.floor(Math.random() * 10000);
   document.getElementById("secondScreen").style.display = "none";
   document.getElementById("thirdScreen").style.display = "none";
-  function myHome() {
+  document.getElementById("phoneScreen").style.display = "none";
+  const myHome = () => {
     document.getElementById("firstScreen").style.display = "none";
     document.getElementById("secondScreen").style.display = "block";
-  }
+  };
   setInterval(() => {
     let date = new Date();
     date.getHours() <= 11
@@ -242,6 +365,14 @@ let random_number =Math.floor(Math.random() *10000)
   setInterval(() => {
     let date = new Date();
     date.getHours() <= 11
+      ? (document.getElementById("timeee").innerHTML =
+          date.getHours() + ":" + date.getMinutes() + " AM")
+      : (document.getElementById("timeee").innerHTML =
+          date.getHours() + ":" + date.getMinutes() + " PM");
+  }, 1000);
+  setInterval(() => {
+    let date = new Date();
+    date.getHours() <= 11
       ? (document.getElementById("tie").innerHTML =
           date.getHours() + ":" + date.getMinutes() + " AM")
       : (document.getElementById("tie").innerHTML =
@@ -255,12 +386,13 @@ let random_number =Math.floor(Math.random() *10000)
 
     document.getElementById("firstSigning").innerHTML =
       "<p style= 'padding:2px;'>" +
-      "Priscilla's welcome your pin is " + random_number +
+      "Priscilla's welcome your pin is " +
+      random_number +
       //   "<button onclick='myShowDrop()' style='background-color: red; border:none; outline:none;padding:5px; margin-left:10px;'>"+
       //     "x" +
       //     "</button>"
       "</p>";
-    //   function myShowDrop() {
+    //   const myShowDrop() {
     //     if (document.getElementById("firstSigning").style.top= '53%'){
     //       document.getElementById("firstSigning").style.top=   '-83px'
     // }
@@ -269,81 +401,90 @@ let random_number =Math.floor(Math.random() *10000)
   }, 3000);
   document.getElementById("myDownn").style.display = "none";
   document.getElementById("cons").style.visibility = "hidden";
-  function myUp() {
+  const myUp = () => {
     document.getElementById("cons").style.visibility = "visible";
     document.getElementById("myUpp").style.display = "none";
     document.getElementById("myDownn").style.display = "block";
     if ((document.getElementById("firstSigning").style.top = "45%")) {
       document.getElementById("firstSigning").style.top = "54%";
     }
-  }
-  function myDown() {
+  };
+  const myDown = () => {
     document.getElementById("cons").style.visibility = "hidden";
     document.getElementById("myUpp").style.display = "block";
     document.getElementById("myDownn").style.display = "none";
     if ((document.getElementById("firstSigning").style.top = "54%")) {
       document.getElementById("firstSigning").style.top = "45%";
     }
-  }
-  function takeBack(){
-  camScreen.style.display ="none"
-  document.getElementById("firstScreen").style.display = "block";
-  document.getElementById("secondScreen").style.display = "none";
-}
- let camScreen =  document.getElementById("camScreen")
- let video = document.getElementById("video")
- let canvas = document.getElementById("canvas")
- camScreen.style.display ="none"
- async function startCam(){
-    document.getElementById("firstScreen").style.display = "none"
-    camScreen.style.display = "block"
-    let thepix = await navigator.mediaDevices.getUserMedia({audio:false, video:true})
+  };
+  const takeBack = () => {
+    camScreen.style.display = "none";
+    document.getElementById("firstScreen").style.display = "block";
+    document.getElementById("secondScreen").style.display = "none";
+  };
+  let camScreen = document.getElementById("camScreen");
+  let video = document.getElementById("video");
+  let canvas = document.getElementById("canvas");
+  camScreen.style.display = "none";
+  const startCam = async () => {
+    document.getElementById("firstScreen").style.display = "none";
+    document.getElementById("secondScreen").style.display = "none";
+    document.getElementById("thirdScreen").style.display = "none";
+    camScreen.style.display = "block";
+    let thepix = await navigator.mediaDevices.getUserMedia({
+      audio: false,
+      video: true,
+    });
     video.srcObject = thepix;
- }
- function takePic(){
-  // let vid = []
- canvas.getContext("2d").drawImage(video, 0,0, canvas.width, canvas.height);
-  let img_link = canvas.toDataURL('image/jpg'); 
-
-  console.log(img_link);
- }
+  };
+  const takePic = () => {
+    canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
+    let imgLink = canvas.toDataURL("image/jpg");
+    myImages.push(imgLink);
+    console.log(myImages);
+  };
   document.getElementById("myHide").style.display = "none";
-  function showInp() {
+  const showInp = () => {
     let myInp = document.getElementById("myInp");
     myInp.type = "password" ? (myInp.type = "text") : (myInp.type = "password");
     document.getElementById("myHide").style.display = "block";
     document.getElementById("myShow").style.display = "none";
-    document.getElementById("myInp").style.color = "red"
-  }
-  function hideInp() {
+    document.getElementById("myInp").style.color = "red";
+  };
+  const hideInp = () => {
     let myInp = document.getElementById("myInp");
     myInp.type = "text" ? (myInp.type = "password") : (myInp.type = "text");
     document.getElementById("myHide").style.display = "none";
     document.getElementById("myShow").style.display = "block";
     // document.getElementById("myInp").style.color = "bisque"
-  }
-  function display(num) {
+  };
+  const display = (num) => {
     document.getElementById("myInp").value += num;
-  }
-  function clr(){
-        document.getElementById("myInp").value = ""
-        document.getElementById("myInp").type = "password"
-       }
-       function next(){
+  };
+  const displayNum = (num) => {
+    document.getElementById("myInput").value += num;
+  };
+  const clr = () => {
+    document.getElementById("myInp").value = "";
+    document.getElementById("myInp").type = "password";
+  };
+  const clrNum = () => {
+    document.getElementById("myInput").value = "";
+    document.getElementById("myInput").type = "number";
+  };
+  const next = () => {
     let myInp = document.getElementById("myInp");
-    if (myInp.value ===""){
-    //    document.getElementById(myInp).style.border= "1px solid red" ;
-    myInp.type = "text"
-    myInp.style.color = "red"
-       myInp.value = "Please enter pin"
-    } else if (myInp.value != random_number){
-        myInp.type = "text"
-    myInp.style.color = "red"
-       myInp.value = "Incorrect pin"
+    if (myInp.value === "") {
+      myInp.type = "text";
+      myInp.style.color = "red";
+      myInp.value = "Please enter pin";
+    } else if (myInp.value != random_number) {
+      myInp.type = "text";
+      myInp.style.color = "red";
+      myInp.value = "Incorrect pin";
+    } else {
+      document.getElementById("secondScreen").style.display = "none";
+      document.getElementById("thirdScreen").style.display = "block";
     }
-     else{
-        document.getElementById("secondScreen").style.display = "none";
-  document.getElementById("thirdScreen").style.display = "block";
-    }
-       }
+  };
 </script>
