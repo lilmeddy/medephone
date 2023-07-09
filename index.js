@@ -4,15 +4,14 @@ const myCalls = () => {
   document.getElementById("thirdScreen").style.display = "none";
   document.getElementById("phoneScreen").style.display = "block";
 };
-const makeCall = () => {
-  
-};
+
 //  let index = 1
 //   let random = mathRandom()
 let random_number = Math.floor(Math.random() * 10000);
 document.getElementById("secondScreen").style.display = "none";
 document.getElementById("thirdScreen").style.display = "none";
 document.getElementById("phoneScreen").style.display = "none";
+document.getElementById("making").style.display ="none"
 const myHome = () => {
   document.getElementById("firstScreen").style.display = "none";
   document.getElementById("secondScreen").style.display = "block";
@@ -39,6 +38,14 @@ setInterval(() => {
     ? (document.getElementById("timee").innerHTML =
         date.getHours() + ":" + date.getMinutes() + " AM")
     : (document.getElementById("timee").innerHTML =
+        date.getHours() + ":" + date.getMinutes() + " PM");
+}, 1000);
+setInterval(() => {
+  let date = new Date();
+  date.getHours() <= 11
+    ? (document.getElementById("timeeee").innerHTML =
+        date.getHours() + ":" + date.getMinutes() + " AM")
+    : (document.getElementById("timeeee").innerHTML =
         date.getHours() + ":" + date.getMinutes() + " PM");
 }, 1000);
 setInterval(() => {
@@ -142,6 +149,7 @@ const display = (num) => {
 };
 const displayNum = (num) => {
   document.getElementById("myInput").value += num;
+  document.getElementById("int").value +=num
 };
 const clr = () => {
   document.getElementById("myInp").value = "";
@@ -166,3 +174,64 @@ const next = () => {
     document.getElementById("thirdScreen").style.display = "block";
   }
 };
+const makeCall = () => {
+  
+  document.getElementById("making").style.display ="block"
+  document.getElementById("phoneScreen").style.display = "none"; 
+  };
+  const endCall = () => {
+    document.getElementById("making").style.display ="none"
+    document.getElementById("phoneScreen").style.display = "block"; 
+    }; 
+
+    let rand = Math.floor(Math.random() * 10000000000000);
+  let myNetwork = document.getElementById("myNetwork");
+  let myLoad = document.getElementById("myLoad");
+  let myAmount = document.getElementById("myAmount");
+  function myGen() {
+    document.getElementById("number").textContent = rand;
+  }
+  function load() {
+    if (
+      myLoad.value.startsWith("*556*") &&
+      myLoad.value.endsWith("#") &&
+      myLoad.value.includes(rand) &&
+      myNetwork.value === "mtn" &&
+      myAmount.value != ""
+    ) {
+      alert("You have succesfully recharged Mtn " + myAmount.value);
+    } else if (
+      myLoad.value.startsWith("*123*") &&
+      myLoad.value.endsWith("#") &&
+      myLoad.value.includes(rand) &&
+      myNetwork.value === "glo" &&
+      myAmount.value != ""
+    ) {
+      alert("You have succesfully recharged Glo " + myAmount.value);
+    } else if (
+      myLoad.value.startsWith("*444*") &&
+      myLoad.value.endsWith("#") &&
+      myLoad.value.includes(rand) &&
+      myNetwork.value === "airtel" &&
+      myAmount.value != ""
+    ) {
+      alert("You have succesfully recharged Airtel " + myAmount.value);
+    } else if (
+      myLoad.value.startsWith("*222*") &&
+      myLoad.value.endsWith("#") &&
+      myLoad.value.includes(rand) &&
+      myNetwork.value === "mobile" &&
+      myAmount.value != ""
+    ) {
+      alert("You have succesfully recharged 9Mobile " + myAmount.value);
+    } else if (myLoad.value = "") {
+      alert("please enter the recharge details");
+    } else if (myNetwork.value === "") {
+      alert("Please pick a Network of your choice");
+    } else if (myAmount.value === "") {
+      alert("please pick how much airtime you want to recharge");
+    } else {
+      alert("Try again");
+      document.getElementById("number").innerHTML = "Airtime Number"
+    }  
+  }

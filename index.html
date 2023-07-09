@@ -280,6 +280,40 @@
           </div>
         </div>
         <section class="calldiv">
+          <aside id="lessNum">
+           <h4>To make a call num must be:</h4>
+           <p>Up to 11 digits</p>
+           <h4>Numbers must start with either:</h4>
+           <p>080</p>
+           <p>090</p>
+           <p>070</p>
+           <p>081</p>
+           <p>091</p>
+           <button onclick="ok()">Ok</button>
+          </aside>
+          <aside id="recharge">
+            <select name="" id="myNetwork">
+              <option value="">Choose Airtime Type</option>
+              <option value="mtn">MTN</option>
+              <option value="glo">GLO</option>
+              <option value="airtel">AIRTEL</option>
+              <option value="mobile">9MOBILE</option>
+            </select>
+            <select name="" id="myAmount" style="margin-bottom: 20px">
+              <option value="">Choose Airtime Price</option>
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="500">500</option>
+              <option value="1000">1000</option>
+            </select>
+            <h2 id="number">Airtime Number</h2>
+            <button onclick="myGen()" class="gen">Generate Airtime</button>
+            <div style="width: 70%; margin: auto">
+              <input id="myLoad" type="text" />
+            </div>
+            <button onclick="load()" class="load">Load Card</button>
+           <button onclick="done()">Done</button>
+          </aside>
           <div>
             <div class="calldiv-inp">
               <input type="text" id="myInput" />
@@ -313,8 +347,32 @@
               </div>
             </div>
           </div>
+          <div class="back" style="margin-top: -7px; text-align: center">
+            <!-- <button onclick="goback()"></button> -->
+          </div>
         </section>
       </div>
-     
+      <div id="making">
+        <header style="color: white">
+          <nav id="timeeee" style="margin-left: 5px"></nav>
+          <nav class="other">
+            <span><i class="icofont-music" style="margin-right: 5px"></i></span>
+            <!-- <span style="color: green;"><i class="icofont-whatsapp"><sup id="whatChange" style="border-radius: 50%; background-color:red;color:white;width: fit-content;height: fit-content;"></sup></i></span> -->
+            <span
+              ><i class="icofont-bluetooth" style="margin-right: 5px"></i
+            ></span>
+            <span><i class="icofont-wifi" style="margin-right: 5px"></i></span>
+            <span
+              ><i class="icofont-batter3y-full" style="margin-right: 5px"></i
+            ></span>
+          </nav>
+        </header>
+         <div class="makin">
+           <div class="up-make">P</div>
+           <div><input type="text" id="int"></div>
+           <div><button onclick="endCall()">^</button></div>
+         </div> 
+      </div>
+     </main>
 </html>
 <script src="index.js"></script>
