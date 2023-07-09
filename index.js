@@ -11,7 +11,7 @@ let random_number = Math.floor(Math.random() * 10000);
 document.getElementById("secondScreen").style.display = "none";
 document.getElementById("thirdScreen").style.display = "none";
 document.getElementById("phoneScreen").style.display = "none";
-document.getElementById("making").style.display ="none"
+document.getElementById("making").style.display = "none";
 const myHome = () => {
   document.getElementById("firstScreen").style.display = "none";
   document.getElementById("secondScreen").style.display = "block";
@@ -84,7 +84,7 @@ setTimeout(() => {
   // }
   //   }
   document.getElementById("firstSigning").style.padding = "10px";
-}, 3000);
+}, 2000);
 document.getElementById("myDownn").style.display = "none";
 document.getElementById("cons").style.visibility = "hidden";
 const myUp = () => {
@@ -147,17 +147,13 @@ const hideInp = () => {
 const display = (num) => {
   document.getElementById("myInp").value += num;
 };
-const displayNum = (num) => {
-  document.getElementById("myInput").value += num;
-  document.getElementById("int").value +=num
-};
+
 const clr = () => {
   document.getElementById("myInp").value = "";
   document.getElementById("myInp").type = "password";
 };
 const clrNum = () => {
   document.getElementById("myInput").value = "";
-  document.getElementById("myInput").type = "number";
 };
 const next = () => {
   let myInp = document.getElementById("myInp");
@@ -174,64 +170,94 @@ const next = () => {
     document.getElementById("thirdScreen").style.display = "block";
   }
 };
+let myInput = document.getElementById("myInput");
+let inte =  document.getElementById("inte")
+const displayNum = (figure) => {
+  myInput.value += figure;
+  // document.getElementById("int").value +=num;
+};
 const makeCall = () => {
-  
-  document.getElementById("making").style.display ="block"
-  document.getElementById("phoneScreen").style.display = "none"; 
-  };
-  const endCall = () => {
-    document.getElementById("making").style.display ="none"
-    document.getElementById("phoneScreen").style.display = "block"; 
-    }; 
-
-    let rand = Math.floor(Math.random() * 10000000000000);
-  let myNetwork = document.getElementById("myNetwork");
-  let myLoad = document.getElementById("myLoad");
-  let myAmount = document.getElementById("myAmount");
-  function myGen() {
-    document.getElementById("number").textContent = rand;
+  setTimeout(() => {
+    if (myInput.value.startsWith("*")) {
+      document.getElementById("recharge").style.top = "20%";
+    }else if (
+      myInput.length = 11 &&
+      myInput.value.startsWith("080") ||
+      myInput.value.startsWith("090") ||
+      myInput.value.startsWith("070") ||
+      myInput.value.startsWith("081") ||
+      myInput.value.startsWith("091")
+    ) {
+          document.getElementById("making").style.display ="block"
+           document.getElementById("phoneScreen").style.display = "none";
+           inte.value = myInput.value
+      
+    }else{
+      document.getElementById("lessNum").style.top = "20%";
+    }
+    // document.getElementById("making").style.display ="block"
+    // document.getElementById("phoneScreen").style.display = "none";
+  }, 2000);
+};
+const ok = () =>{
+  document.getElementById("lessNum").style.top = "-400px";
+}
+const done =()=>{
+  document.getElementById("recharge").style.top = "-400px";
+}
+const endCall = () => {
+  document.getElementById("making").style.display = "none";
+  document.getElementById("phoneScreen").style.display = "block";
+};
+let rand = Math.floor(Math.random() * 10000000000000);
+let myNetwork = document.getElementById("myNetwork");
+let myLoad = document.getElementById("myLoad");
+let myAmount = document.getElementById("myAmount");
+const myGen = () => {
+  document.getElementById("number").textContent = rand;
+};
+const load = () => {
+  if (
+    myLoad.value.startsWith("*556*") &&
+    myLoad.value.endsWith("#") &&
+    myLoad.value.includes(rand) &&
+    myNetwork.value === "mtn" &&
+    myAmount.value != ""
+  ) {
+    alert("You have succesfully recharged Mtn " + myAmount.value);
+  } else if (
+    myLoad.value.startsWith("*123*") &&
+    myLoad.value.endsWith("#") &&
+    myLoad.value.includes(rand) &&
+    myNetwork.value === "glo" &&
+    myAmount.value != ""
+  ) {
+    alert("You have succesfully recharged Glo " + myAmount.value);
+  } else if (
+    myLoad.value.startsWith("*444*") &&
+    myLoad.value.endsWith("#") &&
+    myLoad.value.includes(rand) &&
+    myNetwork.value === "airtel" &&
+    myAmount.value != ""
+  ) {
+    alert("You have succesfully recharged Airtel " + myAmount.value);
+  } else if (
+    myLoad.value.startsWith("*222*") &&
+    myLoad.value.endsWith("#") &&
+    myLoad.value.includes(rand) &&
+    myNetwork.value === "mobile" &&
+    myAmount.value != ""
+  ) {
+    alert("You have succesfully recharged 9Mobile " + myAmount.value);
+  } else if ((myLoad.value = "")) {
+    alert("please enter the recharge details");
+  } else if (myNetwork.value === "") {
+    alert("Please pick a Network of your choice");
+  } else if (myAmount.value === "") {
+    alert("please pick how much airtime you want to recharge");
+  } else {
+    alert("Try again");
+    document.getElementById("number").innerHTML = "Airtime Number";
   }
-  function load() {
-    if (
-      myLoad.value.startsWith("*556*") &&
-      myLoad.value.endsWith("#") &&
-      myLoad.value.includes(rand) &&
-      myNetwork.value === "mtn" &&
-      myAmount.value != ""
-    ) {
-      alert("You have succesfully recharged Mtn " + myAmount.value);
-    } else if (
-      myLoad.value.startsWith("*123*") &&
-      myLoad.value.endsWith("#") &&
-      myLoad.value.includes(rand) &&
-      myNetwork.value === "glo" &&
-      myAmount.value != ""
-    ) {
-      alert("You have succesfully recharged Glo " + myAmount.value);
-    } else if (
-      myLoad.value.startsWith("*444*") &&
-      myLoad.value.endsWith("#") &&
-      myLoad.value.includes(rand) &&
-      myNetwork.value === "airtel" &&
-      myAmount.value != ""
-    ) {
-      alert("You have succesfully recharged Airtel " + myAmount.value);
-    } else if (
-      myLoad.value.startsWith("*222*") &&
-      myLoad.value.endsWith("#") &&
-      myLoad.value.includes(rand) &&
-      myNetwork.value === "mobile" &&
-      myAmount.value != ""
-    ) {
-      alert("You have succesfully recharged 9Mobile " + myAmount.value);
-    } else if (myLoad.value = "") {
-      alert("please enter the recharge details");
-    } else if (myNetwork.value === "") {
-      alert("Please pick a Network of your choice");
-    } else if (myAmount.value === "") {
-      alert("please pick how much airtime you want to recharge");
-    } else {
-      alert("Try again");
-      document.getElementById("number").innerHTML = "Airtime Number"
-    }  
-  }
+};
+// document.getElementById("int").value = myInput.value
